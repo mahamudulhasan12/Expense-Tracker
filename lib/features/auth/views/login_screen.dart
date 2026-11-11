@@ -6,6 +6,7 @@ import '../../../core/constants/app_colors.dart';
 import '../../../shared/widgets/app_button.dart';
 import '../../../shared/widgets/app_text_field.dart';
 import '../controllers/login_controller.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class LoginScreen extends StatelessWidget {
   LoginScreen({super.key});
@@ -39,11 +40,17 @@ class LoginScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 24),
-              const Center(
-                child: Text(
-                  'Expense Tracker',
-                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: AppColors.textPrimary),
-                ),
+              Center(
+                // child: Text(
+                //   'Expense Tracker',
+                //   style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: AppColors.textPrimary),
+                // ),
+                child: Text("Expense Tracker", style: GoogleFonts.lato(
+                  textStyle: Theme.of(context).textTheme.displayLarge,
+                  fontSize: 25,
+                  fontWeight: FontWeight.w700,
+                  fontStyle: FontStyle.italic,
+                ),),
               ),
               const SizedBox(height: 8),
               const Center(
@@ -54,16 +61,16 @@ class LoginScreen extends StatelessWidget {
               ),
               const SizedBox(height: 32),
               AppTextField(
-                label: 'Phone Number',
-                hint: '01XXXXXXXXX',
-                controller: controller.phoneController,
-                keyboardType: TextInputType.phone,
-                prefixIcon: const Icon(Icons.phone_outlined, color: AppColors.textSecondary),
+                label: 'Enter Your Email',
+                hint: 'mahamudul@gmail.com',
+                controller: controller.emailController,
+                keyboardType: TextInputType.emailAddress,
+                prefixIcon: const Icon(Icons.email_outlined, color: AppColors.textSecondary),
               ),
               const SizedBox(height: 20),
               Obx(() => AppTextField(
                     label: 'Password',
-                    hint: 'Enter your password',
+                    hint: 'Strong Password',
                     controller: controller.passwordController,
                     isPassword: controller.obscurePassword.value,
                     prefixIcon: const Icon(Icons.lock_outline, color: AppColors.textSecondary),
