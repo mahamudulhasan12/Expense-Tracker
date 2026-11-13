@@ -19,7 +19,7 @@ class RegistrationScreen extends StatelessWidget {
         leading: IconButton(onPressed: (){
           Get.back();
         }, icon: Icon(Icons.arrow_back_ios)),
-        
+
       ),
       body: SafeArea(
         child: SingleChildScrollView(
@@ -61,34 +61,34 @@ class RegistrationScreen extends StatelessWidget {
               ),
               const SizedBox(height: 16),
               Obx(() => AppTextField(
-                    label: 'Password',
-                    hint: 'Create a password',
-                    controller: controller.passwordController,
-                    isPassword: controller.obscurePassword.value,
-                    prefixIcon: const Icon(Icons.lock_outline, color: AppColors.textSecondary),
-                    suffixIcon: IconButton(
-                      icon: Icon(
-                        controller.obscurePassword.value ? Icons.visibility_off : Icons.visibility,
-                        color: AppColors.textSecondary,
-                      ),
-                      onPressed: controller.togglePasswordVisibility,
-                    ),
-                  )),
+                label: 'Password',
+                hint: 'Create a password',
+                controller: controller.passwordController,
+                isPassword: controller.obscurePassword.value,
+                prefixIcon: const Icon(Icons.lock_outline, color: AppColors.textSecondary),
+                suffixIcon: IconButton(
+                  icon: Icon(
+                    controller.obscurePassword.value ? Icons.visibility_off : Icons.visibility,
+                    color: AppColors.textSecondary,
+                  ),
+                  onPressed: controller.togglePasswordVisibility,
+                ),
+              )),
               const SizedBox(height: 16),
               Obx(() => AppTextField(
-                    label: 'Confirm Password',
-                    hint: 'Confirm your password',
-                    controller: controller.confirmPasswordController,
-                    isPassword: controller.obscureConfirmPassword.value,
-                    prefixIcon: const Icon(Icons.lock_outline, color: AppColors.textSecondary),
-                    suffixIcon: IconButton(
-                      icon: Icon(
-                        controller.obscureConfirmPassword.value ? Icons.visibility_off : Icons.visibility,
-                        color: AppColors.textSecondary,
-                      ),
-                      onPressed: controller.toggleConfirmPasswordVisibility,
-                    ),
-                  )),
+                label: 'Confirm Password',
+                hint: 'Confirm your password',
+                controller: controller.confirmPasswordController,
+                isPassword: controller.obscureConfirmPassword.value,
+                prefixIcon: const Icon(Icons.lock_outline, color: AppColors.textSecondary),
+                suffixIcon: IconButton(
+                  icon: Icon(
+                    controller.obscureConfirmPassword.value ? Icons.visibility_off : Icons.visibility,
+                    color: AppColors.textSecondary,
+                  ),
+                  onPressed: controller.toggleConfirmPasswordVisibility,
+                ),
+              )),
               const SizedBox(height: 16),
               AppTextField(
                 label: 'Address (Optional)',

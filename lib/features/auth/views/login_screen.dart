@@ -70,7 +70,7 @@ class LoginScreen extends StatelessWidget {
               const SizedBox(height: 20),
               Obx(() => AppTextField(
                     label: 'Password',
-                    hint: 'Strong Password',
+                    hint: 'String Password',
                     controller: controller.passwordController,
                     isPassword: controller.obscurePassword.value,
                     prefixIcon: const Icon(Icons.lock_outline, color: AppColors.textSecondary),
@@ -110,7 +110,7 @@ class LoginScreen extends StatelessWidget {
                 child: AppButton(
                   text: 'Login',
                   onPressed: () {
-
+                    controller.Login(email: controller.emailController.text, password: controller.passwordController.text);
                   },
                 ),
               ),
