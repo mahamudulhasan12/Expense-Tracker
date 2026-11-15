@@ -16,7 +16,9 @@ class RegistrationController extends GetxController {
     obscurePassword.value = !obscurePassword.value;
   }
 
+
   void toggleConfirmPasswordVisibility() {
     obscureConfirmPassword.value = !obscureConfirmPassword.value;
   }
+
 }
