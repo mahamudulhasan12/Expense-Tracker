@@ -25,7 +25,7 @@ class ExpenseTrackerApp extends StatelessWidget {
         useMaterial3: true,
         fontFamily: 'Roboto',
       ),
-      home:ValidationPractrice(),
+      home:SplashScreen(),
     );
   }
 }

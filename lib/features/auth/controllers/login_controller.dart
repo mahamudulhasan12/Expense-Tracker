@@ -1,5 +1,9 @@
 import 'dart:convert';
+import 'dart:developer';
 
+
+import 'package:agent_test/features/auth/storage%20/storage_serviece.dart';
+import 'package:agent_test/features/dashboard/views/dashboard_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
@@ -7,7 +11,7 @@ import 'package:http/http.dart' as http;
 class LoginController extends GetxController {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
-  
+  final formKey = GlobalKey<FormState>();
   var obscurePassword = true.obs;
   var rememberMe = false.obs;
 
@@ -19,7 +23,12 @@ class LoginController extends GetxController {
     rememberMe.value = value ?? false;
   }
 
-  Future Login({required String email , required String password})async{
+  void submitLogin(){
+    if(formKey.currentState!.validate()){
+      LoginService(email: emailController.text, password: passwordController.text);
+    }
+  }
+  Future LoginService({required String email , required String password})async{
     try{
       Map d ={
         "email":emailController.value.text,
@@ -35,20 +44,28 @@ class LoginController extends GetxController {
             "Content-Type": "application/json",
           }
       );
+      log("========");
       var data = jsonDecode(res.body);
       if(res.statusCode == 200){
-        print("${data["data"]}");
+        log("${jsonDecode(res.body)}");
         Get.snackbar("Success", "Login Success");
-        return data['data'];;
+
+
+        String token = data['data']['token'].toString();
+        log("${token}");
+        await StorageServiece.saveToken(token);
+        // log("${data['user']['name']}");
+        Get.off(DashboardScreen());
+
       }
       else{
         print("login faild");
         Get.snackbar("Failed", "Login Failed");
-        return data['error'];
+
       }
 
     }catch(e){
-      Get.snackbar("Error", "Login Failed");
+      Get.snackbar("Error", "Something went wrong");
     }
   }
   @override

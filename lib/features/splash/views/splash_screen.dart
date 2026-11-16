@@ -66,16 +66,16 @@ class SplashScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              const SizedBox(height: 32),
-              AppButton(
-                text: 'Get Started',
-                backgroundColor: Colors.white,
-                textColor: AppColors.primary,
-                onPressed: () {
-                  controller.initialize();
-                },
-              ),
-              const SizedBox(height: 16),
+              // const SizedBox(height: 32),
+              // AppButton(
+              //   text: 'Get Started',
+              //   backgroundColor: Colors.white,
+              //   textColor: AppColors.primary,
+              //   onPressed: () {
+              //     controller.initialize();
+              //   },
+              // ),
+              // const SizedBox(height: 16),
             ],
           ),
         ),

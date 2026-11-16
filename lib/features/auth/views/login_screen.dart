@@ -110,7 +110,7 @@ class LoginScreen extends StatelessWidget {
                 child: AppButton(
                   text: 'Login',
                   onPressed: () {
-                    controller.Login(email: controller.emailController.text, password: controller.passwordController.text);
+                    controller.submitLogin();
                   },
                 ),
               ),
