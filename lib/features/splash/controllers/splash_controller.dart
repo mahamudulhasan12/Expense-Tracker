@@ -1,6 +1,7 @@
 import 'package:agent_test/features/auth/storage%20/storage_serviece.dart';
 import 'package:agent_test/features/auth/views/login_screen.dart';
 import 'package:agent_test/features/dashboard/views/dashboard_screen.dart';
+import 'package:agent_test/navigation_screen/navigaton/navigation_screen.dart';
 import 'package:get/get.dart';
 
 class SplashController extends GetxController {
@@ -9,7 +10,7 @@ class SplashController extends GetxController {
     // Future.delayed(Duration(milliseconds: 20));
     String ?token = await StorageServiece.getToken();
     if(token != null && token.isNotEmpty){
-      Get.off(()=>DashboardScreen());
+      Get.off(()=>NavigationScreen());
     }else{
       Get.offAll(()=>LoginScreen());
     }

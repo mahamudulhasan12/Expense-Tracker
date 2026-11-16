@@ -124,7 +124,9 @@ class SettingsScreen extends StatelessWidget {
             ListTile(
               leading: const Icon(Icons.logout, color: AppColors.expenseRed),
               title: const Text('Logout', style: TextStyle(fontWeight: FontWeight.bold, color: AppColors.expenseRed)),
-              onTap: () {},
+              onTap: () {
+                controller.LogoutService();
+              },
             ),
           ],
         ),
