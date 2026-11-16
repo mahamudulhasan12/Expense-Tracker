@@ -4,6 +4,7 @@ import 'dart:developer';
 
 import 'package:agent_test/features/auth/storage%20/storage_serviece.dart';
 import 'package:agent_test/features/dashboard/views/dashboard_screen.dart';
+import 'package:agent_test/navigation_screen/navigaton/navigation_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
@@ -55,7 +56,7 @@ class LoginController extends GetxController {
         log("${token}");
         await StorageServiece.saveToken(token);
         // log("${data['user']['name']}");
-        Get.off(DashboardScreen());
+        Get.off(NavigationScreen());
 
       }
       else{

@@ -14,10 +14,10 @@ class ExpenseReportScreen extends StatelessWidget {
       backgroundColor: AppColors.background,
       appBar: AppBar(
         title: const Text('Expense Report'),
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios, size: 20),
-          onPressed: () => Get.back(),
-        ),
+        // leading: IconButton(
+        //   icon: const Icon(Icons.arrow_back_ios, size: 20),
+        //   onPressed: () => Get.back(),
+        // ),
       ),
       body: SafeArea(
         child: ListView(

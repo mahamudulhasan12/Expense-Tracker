@@ -1,23 +1,13 @@
-import 'package:flutter/cupertino.dart';
+import 'package:agent_test/features/transactions/views/add_income_screen.dart';
+import 'package:agent_test/shared/widgets/app_button.dart';
+import 'package:agent_test/shared/widgets/app_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class NavigationController extends GetxController {
   var selectIndex = 0.obs;
 
-  void changeIndex(int index) {
-    if (index == 2) {
-      Get.bottomSheet(
-        Container(
-          height: 180,
-          color: Colors.white,
-          child: const Center(
-            child: Text('Expense | Income | Transfer'),
-          ),
-        ),
-      );
-    } else {
-      selectIndex.value = index;
-    }
+  void changeScreen(value) {
+    selectIndex.value = value;
   }
 }

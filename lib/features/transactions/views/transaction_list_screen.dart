@@ -35,10 +35,10 @@ class TransactionListScreen extends StatelessWidget {
             ],
           ),
           title: const Text('Transactions'),
-          leading: IconButton(
-            icon: const Icon(Icons.arrow_back_ios, size: 20),
-            onPressed: () => Get.back(),
-          ),
+          // leading: IconButton(
+          //   icon: const Icon(Icons.arrow_back_ios, size: 20),
+          //   onPressed: () => Get.back(),
+          // ),
           actions: [
             IconButton(
               icon: const Icon(Icons.search, color: AppColors.textPrimary),

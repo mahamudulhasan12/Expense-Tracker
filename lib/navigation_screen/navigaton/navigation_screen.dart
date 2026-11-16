@@ -1,3 +1,9 @@
+
+import 'package:agent_test/features/reports/views/expense_report_screen.dart';
+import 'package:agent_test/features/settings/views/settings_screen.dart';
+
+import 'package:agent_test/features/transactions/views/transaction_list_screen.dart';
+import 'package:agent_test/features/transactions/widget/transaction_buttom_sheet.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -12,7 +18,10 @@ class NavigationScreen extends StatelessWidget {
 
   final List<Widget> screens = [
     DashboardScreen(),
-
+    TransactionListScreen(),
+    TransactionBottomSheet(),
+    ExpenseReportScreen(),
+    SettingsScreen(),
   ];
 
   @override
@@ -25,7 +34,7 @@ class NavigationScreen extends StatelessWidget {
       bottomNavigationBar: Obx(
             () => BottomNavigationBar(
           currentIndex: controller.selectIndex.value,
-          onTap: controller.changeIndex,
+          onTap: controller.changeScreen,
           type: BottomNavigationBarType.fixed,
           selectedItemColor: Color(0xff064D82),
           unselectedItemColor: Colors.grey,
@@ -43,6 +52,7 @@ class NavigationScreen extends StatelessWidget {
               icon: Icon(Icons.add_circle, size: 36),
               label: '',
             ),
+
             BottomNavigationBarItem(
               icon: Icon(Icons.bar_chart),
               label: 'Reports',

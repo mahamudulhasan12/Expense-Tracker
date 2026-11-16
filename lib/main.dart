@@ -1,6 +1,7 @@
 import 'package:agent_test/features/accounts/views/add_account_screen.dart';
 import 'package:agent_test/features/auth/views/login_screen.dart';
 import 'package:agent_test/features/splash/views/splash_screen.dart';
+import 'package:agent_test/navigation_screen/navigaton/navigation_screen.dart';
 import 'package:agent_test/widget%20practrice/practrice_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -25,7 +26,7 @@ class ExpenseTrackerApp extends StatelessWidget {
         useMaterial3: true,
         fontFamily: 'Roboto',
       ),
-      home:SplashScreen(),
+      home:NavigationScreen(),
     );
   }
 }
